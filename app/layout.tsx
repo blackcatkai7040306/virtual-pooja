@@ -20,13 +20,15 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body
-				className={`${inter.className} min-h-screen h-full flex flex-col overflow-hidden`}
-			>
+			<body className={`${inter.className}`}>
 				<Provider>
-					<Navbar />
-					<PageLayout>{children}</PageLayout>
-					<Footer />
+					<main
+						className={`min-h-screen h-full flex flex-col overflow-hidden`}
+					>
+						<Navbar />
+						<PageLayout>{children}</PageLayout>
+						<Footer />
+					</main>
 				</Provider>
 			</body>
 		</html>

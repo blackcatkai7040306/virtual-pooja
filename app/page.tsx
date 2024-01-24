@@ -22,10 +22,10 @@ export default function Home() {
 	// }, [state]);
 
 	return (
-		<main className="relative h-screen sm:w-[575px]  mx-auto p-6">
+		<main className="relative h-screen xs:max-w-[500px] mx-auto p-6">
 			<Image
 				src={ram}
-				className="aspect-[9/16] w-auto h-screen"
+				className="w-auto h-screen object-cover sm:object-contain"
 				alt="Brower is not compatible with this kind of images"
 				priority
 				sizes=""
@@ -63,9 +63,9 @@ export default function Home() {
 				<Image
 					alt="whatever it is"
 					src={`https://pooja.bookseva.com/Assets/Deepam/image/deepam.gif`}
-					height={200}
-					width={200}
-					className="absolute bottom-[40%] animate-traverse-circles-with-curves left-1/3"
+					height={175}
+					width={175}
+					className="absolute bottom-[30%] animate-traverse-circles-with-curves left-1/3"
 					priority
 				/>
 			) : null}

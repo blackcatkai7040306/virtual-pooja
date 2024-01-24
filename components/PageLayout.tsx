@@ -8,19 +8,24 @@ import React, { ReactNode, useEffect, useState } from 'react';
 import { HiSpeakerWave, HiSpeakerXMark } from 'react-icons/hi2';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { activePoojas } from '@/atoms/pooja';
+import { FaBell, FaBellSlash } from 'react-icons/fa';
 // import '../public/audio/Ganesh.mp3';
 
 const PageLayout = ({ children }: { children: ReactNode }) => {
 	const [isSound, setIsSound] = useState(true);
 	const [play, { pause, sound: howl }] = useSound('/audio/ram.mp3');
+	const [playBell, { stop: stopBell, sound: bell }] =
+		useSound('/audio/bell.mp3');
 
 	const [sound, setSound] = useRecoilState(soundAtom);
 
 	const toggleMute = () => {
 		setSound((ref) => {
 			return {
+				...ref,
 				sound: !ref.sound,
 				backgroundSound: false,
+				bell: false,
 			};
 		});
 	};
@@ -34,8 +39,17 @@ const PageLayout = ({ children }: { children: ReactNode }) => {
 		}
 	}, [sound.backgroundSound]);
 
+	useEffect(() => {
+		if (sound.bell === true) {
+			bell.loop(true);
+			playBell();
+		} else {
+			stopBell();
+		}
+	}, [sound.bell]);
+
 	return (
-		<div className="flex-1 w-full min-h-screen">
+		<div className="flex-1 w-full h-full">
 			<div className="absolute z-10 left-2 top-5 flex flex-col space-y-3">
 				<button
 					onClick={() => {
@@ -73,14 +87,21 @@ const PageLayout = ({ children }: { children: ReactNode }) => {
 			<div className="absolute z-10 right-2 top-5 flex flex-col space-y-3">
 				<button
 					onClick={() => {
-						setIsSound((ref) => !ref);
-						console.log('clicked');
+						if (sound.sound) {
+							setSound((ref) => {
+								return {
+									...ref,
+									bell: !ref.bell,
+								};
+							});
+						}
+						console.log('bell');
 					}}
 				>
-					{isSound ? (
-						<HiSpeakerWave className="h-6 fill-orange-500 w-6" />
+					{sound.bell ? (
+						<FaBell className="h-6 fill-orange-500 w-6 animate-wiggle" />
 					) : (
-						<HiSpeakerXMark className="h-6 fill-orange-500 w-6" />
+						<FaBellSlash className="h-6 fill-orange-500 w-6" />
 					)}
 				</button>
 			</div>

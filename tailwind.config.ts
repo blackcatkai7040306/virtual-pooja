@@ -39,6 +39,10 @@ const config: Config = {
 							'rotate(360deg)translate(-120px)rotate(-360deg)',
 					},
 				},
+				wiggle: {
+					'0%, 100%': { transform: 'rotate(-10deg)' },
+					'50%': { transform: 'rotate(10deg)' },
+				},
 			},
 			animation: {
 				'traverse-circles': 'traverseCircles 4s linear infinite',
@@ -53,6 +57,7 @@ const config: Config = {
 					'traverseCirclesWithCurves 5s linear infinite 1s',
 				'traverse-circles-with-curves-further-delayed':
 					'traverseCirclesWithCurves 5s linear infinite 2s',
+				wiggle: 'wiggle 1.85s ease-in-out infinite',
 			},
 		},
 	},

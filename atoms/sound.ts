@@ -5,10 +5,12 @@ export const soundAtom = atom<Sound>({
 	default: {
 		sound: true,
 		backgroundSound: false,
+		bell: false,
 	},
 });
 
 type Sound = {
 	sound: boolean;
 	backgroundSound: boolean;
+	bell: boolean;
 };
