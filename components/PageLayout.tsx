@@ -13,7 +13,7 @@ import { FaBell, FaBellSlash } from 'react-icons/fa';
 
 const PageLayout = ({ children }: { children: ReactNode }) => {
 	const [isSound, setIsSound] = useState(true);
-	const [play, { pause, sound: howl }] = useSound('/audio/ram.mp3');
+	const [play, { pause, sound: howl }] = useSound('/audio/ram_updated.mp3');
 	const [playBell, { stop: stopBell, sound: bell }] =
 		useSound('/audio/bell.mp3');
 
