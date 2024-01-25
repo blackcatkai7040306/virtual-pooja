@@ -32,11 +32,23 @@ const config: Config = {
 				},
 				traverseCirclesWithCurves: {
 					'0%': {
-						transform: 'rotate(0deg)translate(-120px)rotate(0deg)',
+						transform: 'rotate(0deg)translate(150px)rotate(0deg)',
 					},
+					// '25%': {
+					// 	transform:
+					// 		'rotate(90deg)translateY(100px)rotate(-90deg)',
+					// },
+					// '50%': {
+					// 	transform:
+					// 		'rotate(180deg)translateY(100px)rotate(-180deg)',
+					// },
+					// '75%': {
+					// 	transform:
+					// 		'rotate(270deg)translateY(100px)rotate(-270deg)',
+					// },
 					'100%': {
 						transform:
-							'rotate(360deg)translate(-120px)rotate(-360deg)',
+							'rotate(360deg)translate(150px)rotate(-360deg)',
 					},
 				},
 				wiggle: {

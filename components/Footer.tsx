@@ -14,7 +14,7 @@ const FooterCopy = () => {
 	const [state, setState] = useRecoilState(pooja);
 	return (
 		<div className="fixed bottom-0 left-1/2 transform -translate-x-1/2 w-full">
-			<div className="min-w-[750px] fixed bottom-0 left-1/2 -translate-x-1/2 h-[200px]">
+			<div className="min-w-[750px] fixed bottom-0 left-1/2 -translate-x-1/2 h-[150px]">
 				<div
 					className={`transition-all duration-200 h-[750px] w-[750px] z-[100] ${
 						open

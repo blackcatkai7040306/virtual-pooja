@@ -40,9 +40,9 @@ const Abhishekam = () => {
 		<button
 			onClick={handlePlay}
 			disabled={pooja.abhishekam}
-			className="absolute top-[7%] right-[61%] flex flex-col items-center"
+			className="absolute top-[8%] left-[29%] flex flex-col items-center"
 		>
-			<div className="rounded-full bg-white w-16 h-16 relative">
+			<div className="rounded-full bg-white w-14 h-14 relative">
 				<Image
 					alt="Image is not supported"
 					src="https://pooja.bookseva.com/Assets/Abhishekam/icon/abhishekamIcon.png"
@@ -55,7 +55,9 @@ const Abhishekam = () => {
 				muted={!sound.sound}
 				audioRef={audioRef}
 			/>
-			<div>Abhishekam</div>
+			<div className="text-sm font-semibold mt-1 text-white">
+				Abhishekam
+			</div>
 		</button>
 	);
 };

@@ -35,9 +35,9 @@ const Deepam = () => {
 		<button
 			onClick={handlePlay}
 			disabled={pooja.deepam}
-			className="absolute top-[7%] left-[62%] flex flex-col items-center"
+			className="absolute top-[8%] left-[61%] flex flex-col items-center"
 		>
-			<div className="rounded-full bg-white w-16 h-16 relative">
+			<div className="rounded-full bg-white w-14 h-14 relative">
 				<Image
 					alt="Image is not supported"
 					src="https://pooja.bookseva.com/Assets/Deepam/icon/light.png"
@@ -50,7 +50,7 @@ const Deepam = () => {
 				muted={!sound.sound}
 				audioRef={audioRef}
 			/>
-			<div>Deepam</div>
+			<div className="text-sm font-semibold mt-1 text-white">Deepam</div>
 		</button>
 	);
 };

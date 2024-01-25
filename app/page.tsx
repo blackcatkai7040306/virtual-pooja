@@ -3,7 +3,7 @@
 import { GlobalState } from '@/atoms/state';
 import Image from 'next/image';
 import { useRecoilState, useRecoilValue } from 'recoil';
-import ram from '@/public/image/ram.jpeg';
+import ram from '@/public/image/ram.jpg';
 import { activePoojas, pooja } from '@/atoms/pooja';
 import { useEffect } from 'react';
 
@@ -22,7 +22,7 @@ export default function Home() {
 	// }, [state]);
 
 	return (
-		<main className="relative h-screen xs:max-w-[500px] mx-auto p-6">
+		<main className="relative h-screen xs:max-w-[500px] mx-auto">
 			<Image
 				src={ram}
 				className="w-auto h-screen object-cover sm:object-contain"
@@ -32,51 +32,65 @@ export default function Home() {
 				fill
 			/>
 
-			{state.abhishekam ? (
-				<Image
-					alt="whatever it is"
-					src={`https://pooja.bookseva.com/Assets/Abhishekam/image/giphy (10).gif`}
-					fill
-					className="animate relative bottom-10"
-					priority
-				/>
-			) : null}
-			{state.archana ? (
-				<Image
-					alt="whatever it is"
-					src={`https://pooja.bookseva.com/Assets/Archana/Image/giphy (12).gif`}
-					fill
-					className="animat relative bottom-10"
-					priority
-				/>
-			) : null}
-			{state.doopam ? (
-				<Image
-					alt="whatever it is"
-					src={`https://pooja.bookseva.com/Assets/Doopam/image/giphy (8).gif`}
-					fill
-					className="animate relative bottom-10"
-					priority
-				/>
-			) : null}
-			{state.deepam ? (
-				<Image
+			<div className="h-screen mx-auto w-full relative">
+				{state.abhishekam ? (
+					<Image
+						alt="whatever it is"
+						src={`https://pooja.bookseva.com/Assets/Abhishekam/image/giphy (10).gif`}
+						fill
+						className="relative bottom-10 h-screen max-w-[550px] w-full mx-auto"
+						sizes=""
+						priority
+					/>
+				) : null}
+				{state.archana ? (
+					<Image
+						alt="whatever it is"
+						src={`https://pooja.bookseva.com/Assets/Archana/Image/giphy (12).gif`}
+						fill
+						className="relative bottom-10 h-screen max-w-[550px] w-full mx-auto"
+						priority
+					/>
+				) : null}
+				{state.doopam ? (
+					<div className="relative max-w-[550px] h-screen w-full mx-auto object-contain">
+						<Image
+							alt="whatever it is"
+							src={`https://pooja.bookseva.com/Assets/Doopam/image/giphy (7).gif`}
+							height={125}
+							width={125}
+							className="absolute bottom-36 left-0"
+							priority
+						/>
+						<Image
+							alt="whatever it is"
+							src={`https://pooja.bookseva.com/Assets/Doopam/image/giphy (7).gif`}
+							height={125}
+							width={125}
+							className="absolute bottom-36 right-2"
+							priority
+						/>
+					</div>
+				) : null}
+				{state.deepam ? (
+					<Image
+						alt="whatever it is"
+						src={`https://pooja.bookseva.com/Assets/Deepam/image/deepam.gif`}
+						height={75}
+						width={75}
+						className="absolute bottom-[30%] animate-traverse-circles-with-curves left-1/2"
+						priority
+					/>
+				) : null}
+				{/* <Image
 					alt="whatever it is"
 					src={`https://pooja.bookseva.com/Assets/Deepam/image/deepam.gif`}
-					height={175}
-					width={175}
-					className="absolute bottom-[30%] animate-traverse-circles-with-curves left-1/3"
+					height={100}
+					width={100}
+					className="absolute bottom-[20%] left-1/2 -translate-[100px] animate-traverse-circles-with-curves"
 					priority
-				/>
-			) : null}
-			{/* <Image
-				alt="whatever it is"
-				src={`https://pooja.bookseva.com/Assets/Deepam/image/deepam.gif`}
-				height={200}
-				width={200}
-				className="absolute bottom-[40%] animate-traverse-circles-with-curves left-1/3"
-				priority
-			/> */}
+				/> */}
+			</div>
 		</main>
 	);
 }

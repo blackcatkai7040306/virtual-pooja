@@ -35,9 +35,9 @@ const Doopam = () => {
 		<button
 			onClick={handlePlay}
 			disabled={pooja.doopam}
-			className="absolute top-[3%] left-[52%] flex flex-col items-center"
+			className="absolute top-[2%] left-[52%] flex flex-col items-center"
 		>
-			<div className="rounded-full bg-white w-16 h-16 relative">
+			<div className="rounded-full bg-white w-14 h-14 relative">
 				<Image
 					alt="Image is not supported"
 					src="https://pooja.bookseva.com/Assets/Doopam/icon/doopamIcon.png"
@@ -50,7 +50,7 @@ const Doopam = () => {
 				muted={!sound.sound}
 				audioRef={audioRef}
 			/>
-			<div>Doopam</div>
+			<div className="text-sm font-semibold mt-1 text-white">Doopam</div>
 		</button>
 	);
 };

@@ -35,9 +35,9 @@ const Archana = () => {
 		<button
 			onClick={handlePlay}
 			disabled={pooja.archana}
-			className="absolute top-[3%] left-[41%] flex flex-col items-center"
+			className="absolute top-[2%] left-[41%] flex flex-col items-center"
 		>
-			<div className="rounded-full bg-white w-16 h-16 relative">
+			<div className="rounded-full bg-white w-14 h-14 relative">
 				<Image
 					alt="Image is not supported"
 					src="https://pooja.bookseva.com/Assets/Archana/icon/flowerIcon.png"
@@ -50,7 +50,7 @@ const Archana = () => {
 				muted={!sound.sound}
 				audioRef={audioRef}
 			/>
-			<div>Archana</div>
+			<div className="text-sm font-semibold mt-1 text-white">Archana</div>
 		</button>
 	);
 };
