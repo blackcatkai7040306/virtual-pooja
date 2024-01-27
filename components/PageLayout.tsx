@@ -9,7 +9,9 @@ import { HiSpeakerWave, HiSpeakerXMark } from 'react-icons/hi2';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { activePoojas } from '@/atoms/pooja';
 import { FaBell, FaBellSlash } from 'react-icons/fa';
+import { TbMusic, TbMusicOff } from 'react-icons/tb';
 // import '../public/audio/Ganesh.mp3';
+import ohm from '@/public/image/om.png';
 
 const PageLayout = ({ children }: { children: ReactNode }) => {
 	const [isSound, setIsSound] = useState(true);
@@ -59,9 +61,9 @@ const PageLayout = ({ children }: { children: ReactNode }) => {
 					}}
 				>
 					{sound.sound ? (
-						<HiSpeakerWave className="h-6 fill-orange-500 w-6" />
+						<HiSpeakerWave className="h-7 fill-orange-600 bg-white rounded-full p-1 w-7" />
 					) : (
-						<HiSpeakerXMark className="h-6 fill-orange-500 w-6" />
+						<HiSpeakerXMark className="h-7 fill-orange-600 bg-white rounded-full p-1 w-7" />
 					)}
 				</button>
 				<button
@@ -78,9 +80,13 @@ const PageLayout = ({ children }: { children: ReactNode }) => {
 					}}
 				>
 					{sound.backgroundSound ? (
-						<HiSpeakerWave className="h-6 fill-orange-500 w-6" />
+						<Image
+							src={ohm}
+							alt="ohm image"
+							className="h-7 fill-orange-600 text-orange-600 bg-white rounded-full p-1 w-7"
+						/>
 					) : (
-						<HiSpeakerXMark className="h-6 fill-orange-500 w-6" />
+						<TbMusicOff className="h-7 fill-orange-600 bg-white rounded-full p-1 w-7" />
 					)}
 				</button>
 			</div>
@@ -99,9 +105,9 @@ const PageLayout = ({ children }: { children: ReactNode }) => {
 					}}
 				>
 					{sound.bell ? (
-						<FaBell className="h-6 fill-orange-500 w-6 animate-wiggle" />
+						<FaBell className="h-7 fill-orange-600 bg-white rounded-full p-1 w-7 animate-wiggle" />
 					) : (
-						<FaBellSlash className="h-6 fill-orange-500 w-6" />
+						<FaBellSlash className="h-7 fill-orange-600 bg-white rounded-full p-1 w-7" />
 					)}
 				</button>
 			</div>
