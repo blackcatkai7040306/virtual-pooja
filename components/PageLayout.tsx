@@ -5,13 +5,14 @@ import { GlobalState } from '@/atoms/state';
 import useSound from 'use-sound';
 import Image from 'next/image';
 import React, { ReactNode, useEffect, useState } from 'react';
-import { HiSpeakerWave, HiSpeakerXMark } from 'react-icons/hi2';
+import { HiShare, HiSpeakerWave, HiSpeakerXMark } from 'react-icons/hi2';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { activePoojas } from '@/atoms/pooja';
-import { FaBell, FaBellSlash } from 'react-icons/fa';
+import { FaBell, FaBellSlash, FaShareAlt } from 'react-icons/fa';
 import { TbMusic, TbMusicOff } from 'react-icons/tb';
 // import '../public/audio/Ganesh.mp3';
 import ohm from '@/public/image/om.png';
+import { RiShareFill } from 'react-icons/ri';
 
 const PageLayout = ({ children }: { children: ReactNode }) => {
 	const [isSound, setIsSound] = useState(true);
@@ -50,6 +51,22 @@ const PageLayout = ({ children }: { children: ReactNode }) => {
 		}
 	}, [sound.bell]);
 
+	const handleShare = async () => {
+		if (navigator.share) {
+			try {
+				await navigator.share({
+					title: 'Ram Pooja | Bookseva',
+					text: 'Join me in the bookseva initiative, Ram Pooja!',
+					url: 'https://puja.bookseva.com',
+				});
+			} catch (error) {
+				console.error('Error sharing:', error);
+			}
+		} else {
+			console.log('Something went wrong');
+		}
+	};
+
 	return (
 		<div className="flex-1 w-full h-full">
 			<div className="absolute z-10 left-2 top-5 flex flex-col space-y-3">
@@ -83,7 +100,7 @@ const PageLayout = ({ children }: { children: ReactNode }) => {
 						<Image
 							src={ohm}
 							alt="ohm image"
-							className="h-7 fill-orange-600 text-orange-600 bg-white rounded-full p-1 w-7"
+							className="h-7 fill-orange-600 text-orange-600a bg-white rounded-full p-1 w-7"
 						/>
 					) : (
 						<TbMusicOff className="h-7 fill-orange-600 bg-white rounded-full p-1 w-7" />
@@ -109,6 +126,9 @@ const PageLayout = ({ children }: { children: ReactNode }) => {
 					) : (
 						<FaBellSlash className="h-7 fill-orange-600 bg-white rounded-full p-1 w-7" />
 					)}
+				</button>
+				<button onClick={handleShare}>
+					<RiShareFill className="h-7 fill-orange-600 bg-white rounded-full p-1 w-7" />
 				</button>
 			</div>
 			<div className="max-w-screen w-full mx-auto bg-background h-full">
