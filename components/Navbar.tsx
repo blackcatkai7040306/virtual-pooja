@@ -14,7 +14,7 @@ const Navbar = () => {
 
 	return (
 		<div
-			className={`absolute top-0 w-full bg-orange-500 z-10 transform transition-transform duration-300 ${
+			className={`absolute top-0 w-full bg-orange-500 z-[999] transform transition-transform duration-300 ${
 				open ? '' : '-translate-y-full'
 			}`}
 		>
@@ -25,6 +25,7 @@ const Navbar = () => {
 				<Link
 					href={'https://bookseva.com/devotee-home-page'}
 					target={'_blank'}
+					className=" z-[99] my-3"
 				>
 					<Image
 						src={logo}
@@ -64,17 +65,17 @@ const Navbar = () => {
 				</button>
 			</div> */}
 			<div className="h-2 w-full translate-y-full bg-orange-500">
-				<div className="flex items-start justify-center">
+				<div className="flex items-start justify-center rotate-45">
 					<button
-						className={`h-10 w-10 rounded-full -translate-y-1/4 flex items-center justify-center bg-orange-500`}
+						className={`h-9 w-9 z-50 rounded-br-lg -translate-y-4 flex items-center justify-center bg-orange-500`}
 						onClick={() => {
 							setOpen((ref) => !ref);
 							console.log('clicked');
 						}}
 					>
 						<MdArrowDropDown
-							className={`transition-all translate-y-1 duration-300 h-10 w-10 ${
-								open ? 'rotate-180' : 'rotate-0'
+							className={`transition-all translate-x-1 translate-y-1  duration-300 h-10 w-10 ${
+								open ? 'rotate-[135deg]' : '-rotate-45'
 							}`}
 						/>
 					</button>
