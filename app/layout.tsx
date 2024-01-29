@@ -9,8 +9,31 @@ import Provider from '@/components/Provider';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-	title: 'Book Seva Virtual Pooja',
-	description: 'A Book Seva Initiative to conduct virtual pooja',
+	metadataBase: new URL('https://puja.bookseva.com'),
+	title: 'Bookseva Virtual Pooja',
+	description: 'A Book Seva Initiative to conduct virtual pooja.',
+	authors: [{ name: 'InIT solutions', url: 'https://initsolutions.in' }],
+	assets: [
+		'https://puja.bookseva.com/images',
+		'https://puja.bookseva.com/audio',
+	],
+	openGraph: {
+		images: '/images/ram.jpeg',
+	},
+	keywords: [
+		'Bookseva',
+		'virtual pooja',
+		'ram pooja',
+		'rampooja.bookseva.com',
+		'ram mandir',
+		'bookseva',
+		'sopanam',
+		'init solutions',
+	],
+	robots: {
+		index: true,
+		follow: true,
+	},
 };
 
 export default function RootLayout({
