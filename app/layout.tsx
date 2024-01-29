@@ -13,13 +13,10 @@ export const metadata: Metadata = {
 	title: 'Bookseva Virtual Pooja',
 	description: 'A Book Seva Initiative to conduct virtual pooja.',
 	authors: [{ name: 'InIT solutions', url: 'https://initsolutions.in' }],
-	assets: [
-		'https://puja.bookseva.com/image',
-		'https://puja.bookseva.com/audio',
-	],
 	openGraph: {
 		title: 'Bookseva Virtual Pooja',
 		description: 'A Book Seva Initiative to conduct virtual pooja.',
+		url: 'https://puja.bookseva.com',
 		siteName: 'Bookseva',
 		type: 'website',
 	},
@@ -43,6 +40,10 @@ export const metadata: Metadata = {
 			follow: true,
 			index: true,
 		},
+	},
+	twitter: {
+		title: 'Bookseva Virtual Pooja',
+		card: 'summary_large_image',
 	},
 };
 
