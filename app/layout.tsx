@@ -20,6 +20,7 @@ export const metadata: Metadata = {
 	openGraph: {
 		title: 'Bookseva Virtual Pooja',
 		description: 'A Book Seva Initiative to conduct virtual pooja.',
+		url: 'https://puja.bookseva.com',
 		siteName: 'Bookseva',
 		type: 'website',
 	},
@@ -43,6 +44,10 @@ export const metadata: Metadata = {
 			follow: true,
 			index: true,
 		},
+	},
+	twitter: {
+		title: 'Bookseva Virtual Pooja',
+		card: 'summary_large_image',
 	},
 };
 
