@@ -51,6 +51,47 @@ const config: Config = {
 							'rotate(360deg)translate(150px)rotate(-360deg)',
 					},
 				},
+				water: {
+					'0%': {
+						transform: 'translate(-100vh)',
+					},
+					'100%': {
+						transform: 'translate(100vh)',
+					},
+				},
+				pot: {
+					'0%': {
+						transform: 'rotate(20deg)',
+						opacity: '0',
+					},
+					'5%': {
+						opacity: '1',
+					},
+					'20%': {
+						transform: 'rotate(-10deg)',
+					},
+					'50%': {
+						transform: 'rotate(-10deg)',
+					},
+					'60%': {
+						transform: 'rotate(20deg)',
+						opacity: '1',
+					},
+					'70%': {
+						opacity: '0',
+					},
+					'100%': {
+						opacity: '0',
+					},
+				},
+				abhishekam: {
+					'0%': {
+						top: '-100vh',
+					},
+					'100%': {
+						top: '100vh',
+					},
+				},
 				wiggle: {
 					'0%, 100%': { transform: 'rotate(-10deg)' },
 					'50%': { transform: 'rotate(10deg)' },
@@ -70,6 +111,8 @@ const config: Config = {
 				'traverse-circles-with-curves-further-delayed':
 					'traverseCirclesWithCurves 5s linear infinite 2s',
 				wiggle: 'wiggle 1.85s ease-in-out infinite',
+				abhishekam: 'abhishekam 7s ease-in-out infinite',
+				pot: 'pot 7s ease-in-out infinite',
 			},
 		},
 	},

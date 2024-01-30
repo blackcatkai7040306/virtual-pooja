@@ -6,20 +6,13 @@ import { useRecoilState, useRecoilValue } from 'recoil';
 import ram from '@/public/image/ram.jpg';
 import { activePoojas, pooja } from '@/atoms/pooja';
 import { useEffect } from 'react';
+import raman from '@/public/image/raman.png';
+import water from '@/public/image/middle-later.png';
+import pot from '@/public/image/pot-icon.png';
 
 export default function Home() {
 	const [state, setState] = useRecoilState(activePoojas);
-
-	// useEffect(() => {
-	// 	if (state.gif) {
-	// 		setTimeout(
-	// 			() => {
-	// 				setState({ gif: '', sound: '' });
-	// 			},
-	// 			state.gif === 'Deepam' ? 15000 : 7000,
-	// 		);
-	// 	}
-	// }, [state]);
+	// let abhishekam = true;
 
 	return (
 		<main className="relative h-screen xs:max-w-[500px] mx-auto">
@@ -32,16 +25,38 @@ export default function Home() {
 				fill
 			/>
 
+			{/* <div className="animate-abhishekam"> */}
+
+			{/* </div> */}
 			<div className="h-screen mx-auto w-full relative">
 				{state.abhishekam ? (
-					<Image
-						alt="whatever it is"
-						src={`https://pooja.bookseva.com/Assets/Abhishekam/image/giphy (10).gif`}
-						fill
-						className="relative bottom-10 h-screen max-w-[550px] w-full mx-auto"
-						sizes=""
-						priority
-					/>
+					<div>
+						<Image
+							alt="water abhishekam"
+							src={water}
+							fill
+							className={`w-auto h-screen object-cover sm:object-contain animate-abhishekam`}
+							sizes=""
+							priority
+						/>
+						<div className="w-screen h-screen object-cover sm:object-contain relative">
+							<Image
+								alt="water abhishekam"
+								src={pot}
+								className={`absolute top-[7%] left-1/2 animate z-[999] animate-pot`}
+								sizes=""
+								priority
+							/>
+						</div>
+						<Image
+							alt="whatever it is"
+							src={raman}
+							fill
+							className="w-auto h-screen object-cover sm:object-contain"
+							sizes=""
+							priority
+						/>
+					</div>
 				) : null}
 				{state.archana ? (
 					<Image
