@@ -2,20 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-@keyframes travelClockwise {
-	0% {
-		transform: translateX(-100%) translateY(0%);
-	}
-	25% {
-		transform: translateX(0%) translateY(-100%);
-	}
-	50% {
-		transform: translateX(100%) translateY(0%);
-	}
-	75% {
-		transform: translateX(0%) translateY(100%);
-	}
-	100% {
-		transform: translateX(-100%) translateY(0%);
+@layer utilities {
+	.make-center {
+		left: calc(50% - 75px / 2);
+		bottom: calc(45% - 75px / 2);
 	}
 }

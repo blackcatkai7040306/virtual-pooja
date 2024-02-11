@@ -1,9 +1,7 @@
 'use client';
 
-import { pooja } from '@/atoms/pooja';
 import React, { useState } from 'react';
 import { MdOutlineKeyboardArrowUp } from 'react-icons/md';
-import { useRecoilState } from 'recoil';
 import Abhishekam from './poojas/Abhishekam';
 import Archana from './poojas/Archana';
 import Doopam from './poojas/Doopam';

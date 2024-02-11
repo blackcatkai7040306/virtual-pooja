@@ -19,9 +19,6 @@ const Navbar = () => {
 			}`}
 		>
 			<div className="flex flex-col items-center">
-				{/* <div>Book Seva</div>
-				<div>Instills you rdrive to eternity</div> */}
-				{/* 'https://pooja.bookseva.com/static/media/bSeva-removebg-preview.e7108d16d53d95574b73.png' */}
 				<Link
 					href={'https://bookseva.com/devotee-home-page'}
 					target={'_blank'}

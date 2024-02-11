@@ -1,9 +1,9 @@
 'use client';
 
-import { activePoojas, pooja } from '@/atoms/pooja';
+import { activePoojas } from '@/atoms/pooja';
 import { soundAtom } from '@/atoms/sound';
 import Image from 'next/image';
-import React, { createRef, useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import AudioPlayer from '@/components/AudioPlayer';
 
@@ -18,7 +18,6 @@ const Doopam = () => {
 		if (audioRef.current) {
 			audioRef.current.play();
 		}
-		console.log('audioref of Doopam => ', audioRef.current);
 
 		const doopam = setTimeout(() => {
 			if (audioRef.current) {

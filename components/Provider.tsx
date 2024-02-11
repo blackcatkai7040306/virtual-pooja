@@ -1,13 +1,7 @@
 'use client';
 
 import React, { ReactNode } from 'react';
-import {
-	RecoilRoot,
-	atom,
-	selector,
-	useRecoilState,
-	useRecoilValue,
-} from 'recoil';
+import { RecoilRoot } from 'recoil';
 
 const Provider = ({ children }: { children: ReactNode }) => {
 	return <RecoilRoot>{children}</RecoilRoot>;

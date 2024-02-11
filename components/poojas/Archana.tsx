@@ -3,7 +3,7 @@
 import { activePoojas } from '@/atoms/pooja';
 import { soundAtom } from '@/atoms/sound';
 import Image from 'next/image';
-import React, { createRef, useRef } from 'react';
+import React, { useRef } from 'react';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import AudioPlayer from '@/components/AudioPlayer';
 
@@ -18,7 +18,6 @@ const Archana = () => {
 		if (audioRef.current) {
 			audioRef.current.play();
 		}
-		console.log('audioref of Archana => ', audioRef.current);
 
 		const archana = setTimeout(() => {
 			if (audioRef.current) {
