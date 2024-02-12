@@ -37,7 +37,7 @@ export default function Home() {
 							<Image
 								alt="water abhishekam"
 								src={pot}
-								className={`absolute top-[7%] left-1/2 animate z-[999] animate-pot`}
+								className={`absolute top-[7%] left-1/2 animate z-[99] animate-pot`}
 								sizes=""
 								priority
 							/>

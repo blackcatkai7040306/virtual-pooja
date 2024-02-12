@@ -65,12 +65,12 @@ const PageLayout = ({ children }: { children: ReactNode }) => {
 
 	return (
 		<div className="flex-1 w-full h-full">
-			<div className="absolute z-10 left-2 top-5 flex flex-col space-y-3">
+			<div className="absolute z-[999] left-2 top-5 flex flex-col space-y-3">
 				<button
 					onClick={() => {
 						toggleMute();
 
-						console.log('clicked');
+						// console.log('clicked');
 					}}
 				>
 					{sound.sound ? (
@@ -89,7 +89,7 @@ const PageLayout = ({ children }: { children: ReactNode }) => {
 								};
 							});
 						}
-						console.log('clicked');
+						// console.log('clicked');
 					}}
 				>
 					{sound.backgroundSound ? (
@@ -103,7 +103,7 @@ const PageLayout = ({ children }: { children: ReactNode }) => {
 					)}
 				</button>
 			</div>
-			<div className="absolute z-10 right-2 top-5 flex flex-col space-y-3">
+			<div className="absolute z-[999] right-2 top-5 flex flex-col space-y-3">
 				<button
 					onClick={() => {
 						if (sound.sound) {
@@ -114,7 +114,7 @@ const PageLayout = ({ children }: { children: ReactNode }) => {
 								};
 							});
 						}
-						console.log('bell');
+						// console.log('bell', sound);
 					}}
 				>
 					{sound.bell ? (
