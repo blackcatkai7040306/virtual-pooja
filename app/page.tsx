@@ -12,17 +12,17 @@ export default function Home() {
 	const [state, setState] = useRecoilState(activePoojas);
 
 	return (
-		<main className="relative h-screen xs:max-w-[500px] mx-auto">
+		<main className="relative h-dvh xs:max-w-[500px] mx-auto">
 			<Image
 				src={ram}
-				className="w-auto h-screen object-cover sm:object-contain"
+				className="w-auto h-dvh object-cover sm:object-contain"
 				alt="Brower is not compatible with this kind of images"
 				priority
 				sizes=""
 				fill
 			/>
 
-			<div className="h-screen mx-auto w-full relative">
+			<div className="h-dvh mx-auto xs:max-w-[500px] w-full relative z-20">
 				{state.abhishekam ? (
 					<div>
 						<Image
@@ -62,6 +62,7 @@ export default function Home() {
 					/>
 				) : null}
 				{state.doopam ? (
+					// <div className="bg-black sm:max-w-[500px] h-full w-full mx-auto relative">
 					<Image
 						alt="whatever it is"
 						src={`https://pooja.bookseva.com/Assets/Doopam/image/giphy (7).gif`}
@@ -70,7 +71,16 @@ export default function Home() {
 						className="absolute bottom-36 left-0"
 						priority
 					/>
-				) : null}
+				) : // </div>
+				// <Image
+				// 	alt="whatever it is"
+				// 	src={`https://pooja.bookseva.com/Assets/Doopam/image/giphy (7).gif`}
+				// 	height={125}
+				// 	width={125}
+				// 	className="absolute bottom-36 right-2"
+				// 	priority
+				// />
+				null}
 
 				{state.doopam ? (
 					<Image

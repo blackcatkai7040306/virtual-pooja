@@ -5,8 +5,20 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import PageLayout from '@/components/PageLayout';
 import Provider from '@/components/Provider';
+import type { Viewport } from 'next';
 
 const inter = Inter({ subsets: ['latin'] });
+
+export const viewport: Viewport = {
+	width: 'device-width',
+	initialScale: 1,
+	maximumScale: 1,
+	userScalable: false,
+	viewportFit: 'contain',
+	height: 'device-height',
+	// Also supported by less commonly used
+	// interactiveWidget: 'resizes-visual',
+};
 
 export const metadata: Metadata = {
 	metadataBase: new URL('https://puja.bookseva.com'),
@@ -57,7 +69,7 @@ export default function RootLayout({
 			<body className={`${inter.className}`}>
 				<Provider>
 					<main
-						className={`min-h-screen h-full flex flex-col overflow-hidden`}
+						className={`min-h-dvh h-full flex flex-col overflow-hidden`}
 					>
 						<Navbar />
 						<PageLayout>{children}</PageLayout>

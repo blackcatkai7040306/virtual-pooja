@@ -62,7 +62,7 @@ const Navbar = () => {
 				</button>
 			</div> */}
 			<div className="h-2 w-full translate-y-full bg-orange-500">
-				<div className="flex items-start justify-center rotate-45">
+				<div className="flex items-center justify-center rotate-45">
 					<button
 						className={`h-9 w-9 z-50 rounded-br-lg -translate-y-4 flex items-center justify-center bg-orange-500`}
 						onClick={() => {

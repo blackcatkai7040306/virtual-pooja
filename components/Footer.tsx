@@ -10,7 +10,7 @@ import Deepam from './poojas/Deepam';
 const Footer = () => {
 	const [open, setOpen] = useState(true);
 	return (
-		<div className="fixed bottom-0 left-1/2 transform -translate-x-1/2 w-full">
+		<div className="fixed bottom-0 left-1/2 transform -translate-x-1/2 w-full z-[999]">
 			<div className="min-w-[750px] fixed bottom-0 left-1/2 -translate-x-1/2 h-[150px]">
 				<div
 					className={`transition-all duration-200 h-[750px] w-[750px] z-[100] ${
