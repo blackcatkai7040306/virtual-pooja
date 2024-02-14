@@ -9,14 +9,15 @@ import Deepam from './poojas/Deepam';
 
 const Footer = () => {
 	const [open, setOpen] = useState(true);
+
 	return (
 		<div className="fixed bottom-0 left-1/2 transform -translate-x-1/2 w-full z-[999]">
 			<div className="min-w-[750px] fixed bottom-0 left-1/2 -translate-x-1/2 h-[150px]">
 				<div
 					className={`transition-all duration-200 h-[750px] w-[750px] z-[100] ${
 						open
-							? 'translate-y-3/4 bg-zinc-100 after:scale-105'
-							: 'translate-y-0 bg-orange-500/90'
+							? 'translate-y-0 bg-orange-500/90'
+							: 'translate-y-3/4 bg-zinc-100 after:scale-105'
 					}  rounded-full`}
 				>
 					<div className="relative h-full w-full rounded-full">
@@ -29,16 +30,17 @@ const Footer = () => {
 			</div>
 			<div className="flex items-end z-[999] justify-center relative">
 				<div
-					className={`absolute bottom-0 bg-zinc-100 rounded-full translate-y-1/2 flex justify-center items-start w-24 h-24`}
+					className={`absolute bottom-0 transition-colors ${
+						open ? 'bg-zinc-100' : 'bg-orange-500'
+					}  rounded-full translate-y-1/2 flex justify-center items-start w-24 h-24`}
 					onClick={() => {
 						setOpen((ref) => !ref);
-						console.log(open);
 					}}
 				>
 					<MdOutlineKeyboardArrowUp
-						className={`transition translate-y-1/4 fill-orange-500 h-10 w-10 ease-out ${
-							open ? 'rotate-180' : ''
-						}`}
+						className={`transition translate-y-1/4 ${
+							open ? 'fill-orange-500' : 'fill-zinc-100'
+						} h-10 w-10 ease-out ${open ? 'rotate-180' : ''}`}
 					/>
 				</div>
 			</div>

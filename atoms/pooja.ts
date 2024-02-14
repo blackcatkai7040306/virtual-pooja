@@ -1,4 +1,3 @@
-import { Howl } from '@/generated-types/types';
 import { atom } from 'recoil';
 
 export const pooja = atom<State>({
@@ -6,27 +5,17 @@ export const pooja = atom<State>({
 	default: {
 		gif: '',
 		sound: '',
-	}, // default value (aka initial value)
-});
-
-export const activePoojas = atom<Poojas>({
-	key: 'activepooja',
-	default: {
-		abhishekam: false,
-		archana: false,
-		doopam: false,
-		deepam: false,
 	},
 });
 
-type State = {
+export const activePoojas = atom<poojas>({
+	key: 'activepooja',
+	default: false,
+});
+
+export type State = {
 	gif: string;
 	sound: string;
 };
 
-type Poojas = {
-	abhishekam: boolean;
-	archana: boolean;
-	doopam: boolean;
-	deepam: boolean;
-};
+export type poojas = 'abhishekam' | 'archana' | 'deepam' | 'doopam' | false;

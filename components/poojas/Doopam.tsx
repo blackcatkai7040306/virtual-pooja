@@ -3,37 +3,40 @@
 import { activePoojas } from '@/atoms/pooja';
 import { soundAtom } from '@/atoms/sound';
 import Image from 'next/image';
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import AudioPlayer from '@/components/AudioPlayer';
+import { playAudioAndChangeState } from '@/lib/helpers';
 
 const Doopam = () => {
 	const [pooja, setPooja] = useRecoilState(activePoojas);
 	const sound = useRecoilValue(soundAtom);
 	const audioRef = useRef<HTMLAudioElement>(null);
+	const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+	useEffect(() => {
+		// to stop the current audio if the selected pooja is not 'doopam'
+		if (pooja !== 'doopam' && audioRef.current) {
+			clearTimeout(timeoutRef.current!);
+			audioRef.current.pause();
+			audioRef.current.currentTime = 0;
+		}
+	}, [pooja]);
 
 	const handlePlay = () => {
-		setPooja((ref) => ({ ...ref, doopam: true }));
-
-		if (audioRef.current) {
-			audioRef.current.play();
-		}
-
-		const doopam = setTimeout(() => {
-			if (audioRef.current) {
-				audioRef.current.pause();
-				audioRef.current.currentTime = 0;
-			}
-			setPooja((ref) => ({ ...ref, doopam: false }));
-		}, 7000);
-
-		return () => clearTimeout(doopam);
+		clearTimeout(timeoutRef.current!);
+		let timeoutId = playAudioAndChangeState({
+			audioRef,
+			value: 'doopam',
+			changePoojaHandler: setPooja,
+		});
+		timeoutRef.current = timeoutId;
 	};
 
 	return (
 		<button
 			onClick={handlePlay}
-			disabled={pooja.doopam}
+			disabled={pooja === 'doopam'}
 			className="absolute top-[2%] left-[52%] flex flex-col items-center"
 		>
 			<div className="rounded-full bg-white w-14 h-14 relative">

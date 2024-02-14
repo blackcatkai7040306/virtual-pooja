@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { useRecoilState } from 'recoil';
+import { useRecoilValue } from 'recoil';
 import ram from '@/public/image/ram.jpg';
 import { activePoojas } from '@/atoms/pooja';
 import raman from '@/public/image/raman.png';
@@ -9,7 +9,7 @@ import water from '@/public/image/middle-later.png';
 import pot from '@/public/image/pot-icon.png';
 
 export default function Home() {
-	const [state, setState] = useRecoilState(activePoojas);
+	const state = useRecoilValue(activePoojas);
 
 	return (
 		<main className="relative h-dvh xs:max-w-[500px] mx-auto">
@@ -23,7 +23,7 @@ export default function Home() {
 			/>
 
 			<div className="h-dvh mx-auto xs:max-w-[500px] w-full relative z-20">
-				{state.abhishekam ? (
+				{state === 'abhishekam' ? (
 					<div>
 						<Image
 							alt="water abhishekam"
@@ -52,7 +52,7 @@ export default function Home() {
 						/>
 					</div>
 				) : null}
-				{state.archana ? (
+				{state === 'archana' ? (
 					<Image
 						alt="whatever it is"
 						src={`https://pooja.bookseva.com/Assets/Archana/Image/giphy (12).gif`}
@@ -61,7 +61,7 @@ export default function Home() {
 						priority
 					/>
 				) : null}
-				{state.doopam ? (
+				{state === 'doopam' ? (
 					// <div className="bg-black sm:max-w-[500px] h-full w-full mx-auto relative">
 					<Image
 						alt="whatever it is"
@@ -82,7 +82,7 @@ export default function Home() {
 				// />
 				null}
 
-				{state.doopam ? (
+				{state === 'doopam' ? (
 					<Image
 						alt="whatever it is"
 						src={`https://pooja.bookseva.com/Assets/Doopam/image/giphy (7).gif`}
@@ -93,7 +93,7 @@ export default function Home() {
 					/>
 				) : null}
 
-				{state.deepam ? (
+				{state === 'deepam' ? (
 					<Image
 						alt="whatever it is"
 						src={`https://pooja.bookseva.com/Assets/Deepam/image/deepam.gif`}
